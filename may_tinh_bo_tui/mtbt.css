@@ -1,0 +1,41 @@
+html{
+    font-family: Arial;
+}
+body{
+    font-size: 16px;
+    color: white;
+}
+.layout_computer{
+    padding: 15px;
+    border: 1px solid #ccc;
+    width: 285px;
+}
+.clear_all{
+    clear: both;
+}
+/*.result{*/
+/*    width: 285px;*/
+/*}*/
+#result_input{
+    width: 283px;
+    padding: 10px 0;
+    outline: none;
+    border: 1px solid #000;
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-align: right;
+    
+}
+.button{
+    float: left;
+    padding: 10px;
+    margin: 0 0 15px 15px;
+    width: 40px;
+    background-color: #333;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.button.first{
+    margin-left: 0;
+}

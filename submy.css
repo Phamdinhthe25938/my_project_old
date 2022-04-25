@@ -1,0 +1,149 @@
+:root{
+    --white-color:#fff;
+    --back-color:#000;
+    --text-color:#333;
+    --header-heght:130px;
+    --navbar-height:38px;
+    --header-with-search-height:calc(var(--header-heght) - var(--navbar-height));
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: initial;
+}
+html{
+    font-size: 62.5%;
+    list-style: 1.6rem;
+    font-family: 'Roboto',sans-serif;
+    box-sizing: border-box;
+}
+.grid{
+    width:1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.grid__full-width{
+    width: 100%;
+}
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.grid__column-2{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16%;
+}
+.grid__column-2-2{
+    width: 20%;
+}
+.product-new{
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 20px;
+}
+.product-new-new{
+    margin-bottom: 20px;
+}
+.img-product-new{
+    width: 100%;
+}
+.grid__column-2-4{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 19%;
+}
+.grid__column-10{
+    padding-left: 5px;
+    padding-right: 5px; 
+    width: 82%;
+}
+@keyframes FadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    animation: FadeIn linear 0.1s;
+}
+.open{
+    display:block;
+}
+.modal__layout{
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+}
+.modal__body{
+    --growth-from:0.7;
+    --growth-to:1;
+    position: relative;
+    margin: auto;  
+    z-index: 1;
+    animation: growth linear 0.1s;
+}
+@keyframes growth{
+    from{
+        transform: scale(var(--growth-from));
+    }
+    to{
+        transform: scale(var(--growth-to));
+    }
+}
+.pagination {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+.pagination--icon{
+
+}
+.pagination-item{
+
+}
+.pagination-item-active .ppagination-item--link{
+    background-color: #EE4D2D;
+    color: #fff;
+    border-radius: 2px;
+}
+.pagination-item-active .ppagination-item--link:hover{
+    background-color: #ed5c3f;
+}
+.pagination--icon-link{
+    text-decoration: none;
+    color: #939393;
+    font-size: 1.4rem;
+    line-height: 30px;
+    padding: 0 20px;
+    display: block;
+}
+.ppagination-item--link{
+    font-size: 2rem;
+    color: #939393;
+    min-width: 40px;
+    height: 30px;
+    display: block;
+    text-decoration: none;
+    margin: 0 14px;
+    line-height: 30px;
+    text-align: center;
+}
+.pagination--icon-right{
+    margin-left: 10px;
+}
+.pagination--icon-left{
+    margin-right: 10px;
+}

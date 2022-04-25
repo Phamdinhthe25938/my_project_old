@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./mtbt.css">
+
+</head>
+<body>
+      <div class="layout_computer">
+          <div class="result">
+              <input type="text" name="result" id="result_input" value="0">
+          </div>
+          <div class="clear_all"></div>
+          <div class="button first" onclick="clickButton(this)">CE</div>
+          <div class="button" onclick="clickButton(this)">&lt;--</div>
+          <div class="button" onclick="clickButton(this)">%</div>
+          <div class="button" onclick="clickButton(this)">+</div>
+          <div class="clear_all"></div>
+
+          <div class="button first" onclick="clickButton(this)">7</div>
+          <div class="button" onclick="clickButton(this)">8</div>
+          <div class="button" onclick="clickButton(this)">9</div>
+          <div class="button" onclick="clickButton(this)">-</div>
+          <div class="clear_all"></div>
+
+          <div class="button first" onclick="clickButton(this)">4</div>
+          <div class="button" onclick="clickButton(this)">5</div>
+          <div class="button" onclick="clickButton(this)">6</div>
+          <div class="button"  onclick="clickButton(this)">X</div>
+          <div class="clear_all"></div>
+
+          <div class="button first" onclick="clickButton(this)">1</div>
+          <div class="button" onclick="clickButton(this)">2</div>
+          <div class="button" onclick="clickButton(this)">3</div>
+          <div class="button" onclick="clickButton(this)">/</div>
+          <div class="clear_all"></div>
+
+          <div class="button first" onclick="clickButton(this)">0</div>
+          <div class="button" onclick="clickButton(this)">+/-</div>
+          <div class="button" onclick="clickButton(this)">.</div>
+          <div class="button" onclick="clickButton(this)">=</div>
+          <div class="clear_all"></div>
+      </div>
+      <script src="./mtbt.js"></script>
+</body>
+</html>
+// So phep tinh uu tien tim thay
+let uuTien = 0;
+//Mang ghi nho cac so han
+let doi_dau =false;
+let mang_so_index =0;
+let mang_so = new Array();
+//Mang ghi nho cac phep tinh:
+let mang_pt_index =0;
+let mang_pt= new Array();
+// value dang co
+let str_ketQua = '';
+//phim moi
+let phim_moi='';
+let ket_qua = document.getElementById("result_input");
+//ham nhap so
+function clickButton(obj){
+if(str_ketQua=='' && phim_moi==''){
+str_ketQua =ket_qua.value;
+}
+if(str_ketQua='0'){
+str_ketQua='';
+}
+let type = obj.innerHTML;
+if(
+type == '1' ||
+type == '2' ||
+type == '3' ||
+type == '4' ||
+type == '5' ||
+type == '6' ||
+type == '7' ||
+type == '8' ||
+type == '9' ||
+type == '+/-' ||
+type =='.'
+){
+if(type== '+/-'){
+//doi tu - thanh cong+
+if(doi_dau){
+doi_dau=false;
+phim_moi = phim_moi+phim_moi.substring(1);
+}else{
+//doi tu + thanh -
+doi_dau=true;
+phim_moi='-'+phim_moi;
+}
+}
+else{
+phim_moi +=type;
+}
+
+}
+//thay doi hien thi
+ket_qua.value = str_ketQua+ phim_moi;
+}
